@@ -1,3 +1,40 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
+--
+local opt = vim.opt
+
+-- Don't like autoformatting
+vim.g.autoformat = false
+
+-- Show folds even when open
+vim.g.lazyvim_statuscolumn = {
+  folds_open = true,
+}
+opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = "",
+  foldsep = " ",
+  eob = "~",
+}
+
+opt.wrap = false
+opt.autowrite = false
+opt.linebreak = false
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.signcolumn = "yes"
+opt.hlsearch = true
+opt.incsearch = true
+
+-- Split window to show substitutions live
+opt.inccommand = "split"
+
+vim.g.c_space_errors = 1
+vim.g.c_min_lines = 100
+vim.g.c_syntax_for_h = 1
+vim.g.c_no_comment_fold = 1
+
+-- Colorize a column on 80 and 132
+vim.o.colorcolumn = "80,132"
